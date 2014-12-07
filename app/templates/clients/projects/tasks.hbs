@@ -1,9 +1,6 @@
-<ul>
-{{#each item in tasks}}
-  <li>
-    {{#link-to 'clients.projects.tasks.view' item}}{{item.title}}{{/link-to}}
-    Start
-  </li>
-{{/each}}
-</ul>
+<div class="btn-group-vertical" role="group" aria-label="...">
+    {{#each item in tasks}}
+        {{#link-to 'clients.projects.tasks.view' item tagName='button' class='btn btn-default'}}{{item.title}}{{/link-to}}
+    {{/each}}
+</div>
 {{outlet}}

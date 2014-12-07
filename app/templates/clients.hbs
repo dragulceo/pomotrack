@@ -1,6 +1,6 @@
-<ul>
-{{#each item in model}}
-  <li>{{#link-to 'clients.projects' item}}{{item.name}}{{/link-to}}</li>
-{{/each}}
-</ul>
+<div class="btn-group-vertical" role="group" aria-label="...">
+    {{#each item in model}}
+        {{#link-to 'clients.projects' item tagName='button' class='btn btn-default'}}{{item.name}}{{/link-to}}
+    {{/each}}
+</div>
 {{outlet}}
