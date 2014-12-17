@@ -3,7 +3,7 @@ import Client from "pomotrack/models/client";
 import Project from "pomotrack/models/project";
 import Task from "pomotrack/models/task";
 
-Client.reopen({
+Client.reopenClass({
   FIXTURES: [{
     id: 1,
     name: 'Brad Pitt',
@@ -115,6 +115,23 @@ Task.reopenClass({
     added: new Date(),
     project: 6
   }]
+});
+
+
+DS.FixtureAdapter.reopen({
+  fixturesForType: function(type) {
+    var parent;
+    if(!type.FIXTURES) {
+      parent = type.superclass;
+      do {
+        if(parent.FIXTURES) {
+          type.FIXTURES = parent.FIXTURES;
+          break;
+        }
+      } while (parent = parent.superclass);
+    }
+    return this._super(type);
+  }
 });
 
 export default DS.FixtureAdapter.extend({
