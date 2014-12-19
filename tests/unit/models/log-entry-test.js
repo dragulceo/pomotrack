@@ -2,11 +2,13 @@ import {
   moduleForModel,
   test
 } from 'ember-qunit';
+import storeInjector from '../../helpers/store-injector';
 import Ember from 'ember';
+storeInjector.inject();
 
 moduleForModel('log-entry', 'LogEntry', {
   // Specify the other units that are required for this test.
-  needs: ['store:main', 'model:client', 'model:project', 'model:task']
+  needs: [ 'model:client', 'model:project', 'model:task']
 });
 
 test('it exists', function() {
