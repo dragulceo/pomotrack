@@ -20,6 +20,8 @@ Router.map(function() {
       });
     });
   });
+  this.resource('main', function () {
+  });
 });
 
 export default Router;
