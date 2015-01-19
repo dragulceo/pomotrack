@@ -48,7 +48,7 @@ Task.reopenClass({
   }, {
     id: 8,
     title: 'Gumball',
-    projects: 4,
+    project: 4,
     logEntries: [10]
   }, {
     id: 9,
