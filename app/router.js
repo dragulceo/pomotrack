@@ -5,7 +5,7 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(function() {
+Router.map(function () {
   this.resource('clients', function () {
     this.resource('clients.projects', {
       path: ':client_id'
@@ -21,6 +21,16 @@ Router.map(function() {
     });
   });
   this.resource('main', function () {
+    this.route('client', {
+      path: 'client/:client_id'
+    });
+    this.route('project', {
+      path: 'project/:project_id'
+    });
+    this.route('task', {
+      path: 'task/:task_id'
+    });
+    this.route('new');
   });
 });
 
