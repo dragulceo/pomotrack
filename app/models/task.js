@@ -4,6 +4,9 @@ var Task = DS.Model.extend({
   submitted: DS.attr('boolean', {
     defaultValue: 0
   }),
+  duration: DS.attr('numnber', {
+    defaultValue: 0
+  }),
   project: DS.belongsTo('project'),
   logEntries: DS.hasMany('log-entry', {
     async: true
