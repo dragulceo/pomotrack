@@ -1,0 +1,34 @@
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <input placeholder="Filter" type="text" class="form-control"/>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">Tree</button>
+        <button type="button" class="btn btn-default">List</button>
+    </div>
+</div>
+<div class="row list">
+    <ul class="clients">
+        {{#each client in model}}
+        <li>
+            <span>{{#link-to 'main.client' client}}{{client.name}}{{/link-to}}</span>
+            <ul class="projects">
+                {{#each project in client.projects}}
+                <li>
+                    <span>{{#link-to 'main.project' project}}{{project.title}}{{/link-to}}</span>
+                    <ul class="tasks">
+                        {{#each task in project.tasks}}
+                        <li>{{#link-to 'main.task' task}}{{task.title}}{{/link-to}}</li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</div>

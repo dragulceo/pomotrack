@@ -1,0 +1,13 @@
+<div class="row selected-task">
+    <h2>{{model.title}}</h2>
+
+    <div class="clock">{{time-format duration}}</div>
+    <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+    </button>
+</div>
+<div class="row log">
+    {{#each logEntry in logEntries}}
+        {{render "clients/projects/tasks/log_entry" logEntry}}
+    {{/each}}
+</div>

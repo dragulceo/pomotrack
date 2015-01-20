@@ -1,62 +1,6 @@
 <div class="row">
     <div class="col-sm-6">
-        <div class="row">
-            <input placeholder="Filter" type="text"/>
-        </div>
-        <div class="row">
-            <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default">Tree</button>
-                <button type="button" class="btn btn-default">List</button>
-            </div>
-        </div>
-        <div class="row list">
-            <ul>
-                <li>project1
-                    <ul>
-                        <li>client1
-                            <ul>
-                                <li>item1</li>
-                                <li>item2</li>
-                            </ul>
-                        </li>
-                        <li>client2
-                            <ul>
-                                <li>item1</li>
-                                <li>item2</li>
-                            </ul>
-                        </li>
-                        <li>client3
-                            <ul>
-                                <li>item1</li>
-                                <li>item2</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>project2
-                    <ul>
-                        <li>client1
-                            <ul>
-                                <li>item1</li>
-                                <li>item2</li>
-                            </ul>
-                        </li>
-                        <li>client2
-                            <ul>
-                                <li>item1</li>
-                                <li>item2</li>
-                            </ul>
-                        </li>
-                        <li>client3
-                            <ul>
-                                <li>item1</li>
-                                <li>item2</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        {{outlet tasks-list}}
     </div>
     <div class="col-sm-6">
         <div class="row pomodoro">
@@ -64,22 +8,6 @@
 
             <div class="clock">24:59</div>
         </div>
-        <div class="row selected-task">
-            <h2>Task title</h2>
-
-            <div class="clock">00:35:33</div>
-            <button type="button" class="btn btn-default" aria-label="Left Align">
-                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-            </button>
-        </div>
-        <div class="row log">
-            <ul>
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
-                <li>item4</li>
-                <li>item5</li>
-            </ul>
-        </div>
+        {{outlet}}
     </div>
 </div>
